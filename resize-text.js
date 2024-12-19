@@ -27,31 +27,26 @@ export function toggleZoom() {
         textElements.forEach((element) => {
             let attr = {
                 element,
+                lineHeight: getComputedInt(element, 'line-height'),
                 fontSize: getComputedInt(element, 'fontSize')
             };
+
             prerender.push(attr);
         });
     }
 
     function setFontSize() {
         prerender.forEach(el => {
-            let { element, fontSize } = el;
+            let { element, lineHeight, fontSize } = el;
             element.classList.add('equa11y-zoom-text');
             element.style['transition'] = 'font 0s';
             element.dataset.font = fontSize;
+            addStyle(element, 'line-height', lineHeight * zoomLevel);
             addStyle(element, 'font-size', fontSize * zoomLevel);
         });
 
         style.appendChild(document.createTextNode(css));
         head.appendChild(style);
-    }
-
-    function removeFontSize() {
-        document.querySelectorAll('.equa11y-zoom-text').forEach(el => {
-            el.classList.remove('equa11y-text-zoom');
-            el.style['font-size'] = null;
-            el.style['transition'] = null;
-        });
     }
 
     function getComputedInt(element, attr) {
@@ -69,7 +64,8 @@ export function toggleZoom() {
     function updateFontSize() {
         document.getElementById('text_zoom_css').textContent = `* { font-size: ${initialFontSize * zoomLevel}px !important; }`;
         prerender.forEach(el => {
-            let { element, fontSize } = el;
+            let { element, lineHeight, fontSize } = el;
+            addStyle(element, 'line-height', lineHeight * zoomLevel);
             addStyle(element, 'font-size', fontSize * zoomLevel);
         });
     }

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Resize Text By Equa11y",
   "version": "1.0",
-  "description": "An extension to quickly and easily resize the browser text up to 200%",
+  "description": "Quickly and easily resize the browser text up to 200%",
   "permissions": [
     "activeTab",
     "scripting",
