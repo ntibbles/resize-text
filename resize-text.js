@@ -49,6 +49,15 @@ export function toggleZoom() {
         head.appendChild(style);
     }
 
+    function removeFontSize() {
+        document.querySelectorAll('.equa11y-zoom-text').forEach(el => {
+            el.style['font-size'] = null;
+            el.style['line-height'] = null;
+            el.style['transition'] = null;
+        });
+        document.getElementById('text_zoom_css').cssText = css;
+    }
+
     function getComputedInt(element, attr) {
         if(element.dataset.font) return element.dataset.font;
         const computedStyle = getComputedStyle(element);
@@ -68,6 +77,10 @@ export function toggleZoom() {
             addStyle(element, 'line-height', lineHeight * zoomLevel);
             addStyle(element, 'font-size', fontSize * zoomLevel);
         });
+
+        if(zoomLevel === 1) {
+            removeFontSize();
+        }
     }
 
     function handleZoomChange(msg) {
