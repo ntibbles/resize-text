@@ -1,0 +1,12 @@
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="range"] {
+    accent-color: #AB1B18;
+    margin: 10px 0;
+}
