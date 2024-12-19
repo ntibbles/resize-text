@@ -72,10 +72,6 @@ export function toggleZoom() {
             let { element, fontSize } = el;
             addStyle(element, 'font-size', fontSize * zoomLevel);
         });
-
-        if(zoomLevel === 1) {
-            removeFontSize();
-        }
     }
 
     function handleZoomChange(msg) {
