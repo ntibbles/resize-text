@@ -2,11 +2,25 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 
 input[type="range"] {
     accent-color: #AB1B18;
-    margin: 10px 0;
+    margin: 10px 0 5px;
+}
+
+footer {
+    margin-top: 5px;
+    text-align: right;
+    font-size: 0.6em;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.icon {
+    width: 24px;
 }

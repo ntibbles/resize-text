@@ -55,7 +55,7 @@ export function toggleZoom() {
             el.style['line-height'] = null;
             el.style['transition'] = null;
         });
-        document.getElementById('text_zoom_css').cssText = css;
+        document.getElementById('text_zoom_css').textContent = '';
     }
 
     function getComputedInt(element, attr) {
