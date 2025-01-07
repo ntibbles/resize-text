@@ -35,7 +35,7 @@ function restoreSlider() {
     chrome.storage.sync.get().then(result => {
         const slider = document.getElementById('textZoom');
         const zoomValue = document.getElementById('zoomValue');
-        const value = result['resizeTextSlider']?.slider
+        const value = result['resizeTextSlider']?.slider || 1;
         slider.value = value || 1;
         zoomValue.textContent = `${Math.round(value * 100)}%`;
     });
